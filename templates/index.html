@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Say Hello</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    </head>
+    <body>
+        <img src = "https://scontent-frt3-1.xx.fbcdn.net/v/t1.15752-9/270407722_338537707850634_7225868954800844493_n.png?_nc_cat=104&ccb=1-5&_nc_sid=ae9488&_nc_ohc=DKdQ2pz01s8AX8vaEqj&_nc_ht=scontent-frt3-1.xx&oh=03_AVKRbdNPT0rRTHuEltjK7CiOlvR-VEK7mVKqfxBO1B37ww&oe=61FA92D1">
+        <br>
+        <form action="greet" method="post">
+            {% for message in get_flashed_messages()%}
+                <p> {{message}} </p>
+            {% endfor %}
+            <br>
+            <input type="text" name ="name_input">
+            <br>
+            <input type="submit" value ="GREET" id ="greet">
+        </form>
+    </body>
+</html>
